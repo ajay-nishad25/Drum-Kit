@@ -7,7 +7,7 @@ for(var i=0 ; i<numberOfDrumButtons ; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         var clickedButton = this.innerHTML;
         checkCharacter(clickedButton);
-        // buttonAnimation(clickedButton);
+        buttonAnimation(clickedButton);
 
     });
 }
@@ -58,15 +58,15 @@ function checkCharacter(clickedButton){
 // for key press
 document.addEventListener("keydown",function(event){
     checkCharacter(event.key);
-    // buttonAnimation(event.key);
+    buttonAnimation(event.key);
     console.log(event);
 });
 
-// function buttonAnimation(key){
-//     var activeButton = document.querySelector("."+key);
-//     activeButton.classList.add("pressed");
+function buttonAnimation(key){
+    var activeButton = document.querySelector("."+key);
+    activeButton.classList.add("pressed");
 
-//     setTimeout(function(){
-//         activeButton.classList.remove("pressed");
-//     },100);
-// }
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    },100);
+}
